@@ -65,7 +65,7 @@ The weight of the above cost factor are tuned manually to find the values which 
 Due to steering angle sign used in unity simulator is opposite to real world steering angle sign for moving in left/ right direction, the delta value given by the websocket is negated.
 
 * **Timestep Length and Elapsed Duration (N & dt):**
-These are used for predicting horizon.
+These are used for predicting horizon duration. We only move the next timestep and repeat the process.
 The final value of N (timestep length) and dt (elapsed duration between timesteps) used are, N=10, dt=0.1. These values are again chosen manually. A bigger value of N will increase the calculation time and in turn impact real time performance. This makes the vehicle's movement erratic specially on the turns. The values tested were N=15/20 and corresponding dt value used are 0.05/0.09. With N=10 and dt=0.1 gives  smooth vehicle control in the turnings also.
 
 * **Polynomial Fitting and MPC Preprocessing:**
