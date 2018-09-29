@@ -54,13 +54,14 @@ Where,
    epsi  : orientation error
    delta : steering angle
    a     : acceleration
-    
+   Lf    : Distance of front of vehicle to the center of gravity of vehicle
 Here, "delta" and "a" are the actuator control. The goal of MPC is to find "delta" & "a" value in a way which minimize the cost calculated using various factors such as:  
 1. squared sum of cte, epsi, velocity w.r.t reference state.
 2. squared sum of delta and a to minimize the use of actuators.
 3. squared sum of difference between consecutive actuator values to minimize the sharp change of the values.
 
-The weight of the above cost factor are tuned manually to find the values which help the vehicle to maintain the track.
+The weight of the above cost factor are tuned manually to find the values which help the vehicle to maintain the track. These help the vehicle to have smooth transition of steering angle rather than sharp change.
+
 Due to steering angle sign used in unity simulator is opposite to real world steering angle sign for moving in left/ right direction, the delta value given by the websocket is negated.
 
 * **Timestep Length and Elapsed Duration (N & dt):**
